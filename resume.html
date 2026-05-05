@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aldrey Dela Pena Canlas — Resume</title>
+  <style>
+    /* ── Reset & base ─────────────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary:   #0077b6;
+      --primary-lt:#0096c7;
+      --text:      #1a1a2e;
+      --muted:     #4a5568;
+      --border:    #cbd5e0;
+      --bg-accent: #f0f7ff;
+      --font:      'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
+    }
+
+    html { font-size: 10pt; }
+
+    body {
+      font-family: var(--font);
+      color: var(--text);
+      background: #fff;
+      line-height: 1.5;
+    }
+
+    /* ── Page wrapper ─────────────────────────────────────────────────────── */
+    .page {
+      max-width: 52rem;
+      margin: 0 auto;
+      padding: 2.4rem 2.8rem;
+    }
+
+    /* ── Print button (hidden in print) ──────────────────────────────────── */
+    .print-btn {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 1.5rem;
+    }
+
+    .print-btn button {
+      padding: 0.5rem 1.4rem;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 0.375rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: var(--font);
+    }
+
+    .print-btn button:hover { background: var(--primary-lt); }
+
+    @media print {
+      .print-btn { display: none; }
+      .page { padding: 0; max-width: 100%; }
+      html { font-size: 9.5pt; }
+      body { background: #fff; }
+      a { color: inherit; text-decoration: none; }
+    }
+
+    /* ── Header ──────────────────────────────────────────────────────────── */
+    .resume-header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1rem;
+      align-items: start;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid var(--primary);
+      margin-bottom: 1.4rem;
+    }
+
+    .resume-name {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+
+    .resume-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-top: 0.25rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .resume-contact {
+      text-align: right;
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .resume-contact a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    /* ── Section ─────────────────────────────────────────────────────────── */
+    .section {
+      margin-bottom: 1.4rem;
+    }
+
+    .section-heading {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    /* ── Summary ─────────────────────────────────────────────────────────── */
+    .summary p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* ── Experience ──────────────────────────────────────────────────────── */
+    .exp-entry {
+      margin-bottom: 1rem;
+    }
+
+    .exp-entry:last-child { margin-bottom: 0; }
+
+    .exp-header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0.5rem;
+      align-items: baseline;
+      margin-bottom: 0.15rem;
+    }
+
+    .exp-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .exp-date {
+      font-size: 0.8rem;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .exp-company {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 0.4rem;
+    }
+
+    .exp-bullets {
+      list-style: none;
+      padding: 0;
+    }
+
+    .exp-bullets li {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.55;
+      padding-left: 1rem;
+      position: relative;
+      margin-bottom: 0.2rem;
+    }
+
+    .exp-bullets li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-size: 0.7rem;
+      top: 0.15rem;
+    }
+
+    /* ── Projects ────────────────────────────────────────────────────────── */
+    .project-entry {
+      margin-bottom: 0.85rem;
+    }
+
+    .project-entry:last-child { margin-bottom: 0; }
+
+    .project-header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0.5rem;
+      align-items: baseline;
+    }
+
+    .project-name {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .project-stack {
+      font-size: 0.75rem;
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .project-desc {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.55;
+      margin-top: 0.15rem;
+    }
+
+    /* ── Skills ──────────────────────────────────────────────────────────── */
+    .skills-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .skills-table tr {
+      vertical-align: top;
+    }
+
+    .skills-table td {
+      padding: 0.2rem 0.5rem 0.2rem 0;
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
+
+    .skills-table td:first-child {
+      font-weight: 700;
+      color: var(--text);
+      white-space: nowrap;
+      width: 11rem;
+      padding-right: 0.75rem;
+    }
+
+    .skills-table td:last-child {
+      color: var(--muted);
+    }
+
+    /* ── Certifications ──────────────────────────────────────────────────── */
+    .cert-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem 2rem;
+    }
+
+    .cert-item {
+      font-size: 0.85rem;
+      color: var(--muted);
+      padding-left: 1rem;
+      position: relative;
+      line-height: 1.5;
+    }
+
+    .cert-item::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-size: 0.75rem;
+      top: 0.1rem;
+    }
+
+    /* ── Achievements ────────────────────────────────────────────────────── */
+    .achievements-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.5rem;
+    }
+
+    .achievement-item {
+      background: var(--bg-accent);
+      border: 1px solid #bee3f8;
+      border-radius: 0.375rem;
+      padding: 0.5rem 0.75rem;
+    }
+
+    .achievement-metric {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--primary);
+      display: block;
+      line-height: 1.2;
+    }
+
+    .achievement-label {
+      font-size: 0.75rem;
+      color: var(--muted);
+      line-height: 1.4;
+      display: block;
+      margin-top: 0.1rem;
+    }
+
+    /* ── Education ───────────────────────────────────────────────────────── */
+    .edu-entry {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0.5rem;
+      align-items: baseline;
+    }
+
+    .edu-degree {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .edu-school {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .edu-year {
+      font-size: 0.8rem;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    /* ── Page break hints ────────────────────────────────────────────────── */
+    @media print {
+      .no-break { page-break-inside: avoid; }
+      .section  { page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- Print button -->
+    <div class="print-btn">
+      <button onclick="window.print()">⬇ Save as PDF</button>
+    </div>
+
+    <!-- ── Header ──────────────────────────────────────────────────────── -->
+    <header class="resume-header">
+      <div>
+        <div class="resume-name">Aldrey Dela Pena Canlas</div>
+        <div class="resume-title">Full Stack Developer &amp; AI Integration</div>
+      </div>
+      <div class="resume-contact">
+        <a href="mailto:aldrey.bim@gmail.com">aldrey.bim@gmail.com</a><br />
+        <a href="tel:+639750280986">+63 9750280986</a><br />
+        Mexico, Pampanga, Philippines<br />
+        <a href="https://github.com/aldrey-canlas" target="_blank">github.com/aldrey-canlas</a>
+      </div>
+    </header>
+
+    <!-- ── Summary ─────────────────────────────────────────────────────── -->
+    <section class="section summary no-break">
+      <div class="section-heading">Professional Summary</div>
+      <p>Full Stack Developer with 6+ years of experience building web applications and integrating AI capabilities into products. Works across the entire stack — from React/Next.js frontends and REST/GraphQL APIs to Python/Node.js backends and LLM-powered features. Specializes in bridging web engineering and AI integration: RAG pipelines, chat interfaces, semantic search, and intelligent automation that ship as production-ready products.</p>
+    </section>
+
+    <!-- ── Experience ───────────────────────────────────────────────────── -->
+    <section class="section">
+      <div class="section-heading">Experience</div>
+
+      <div class="exp-entry no-break">
+        <div class="exp-header">
+          <span class="exp-title">Full Stack Developer &amp; AI Integration Lead</span>
+          <span class="exp-date">March 2025 – Present</span>
+        </div>
+        <div class="exp-company">Boulder Labs — US Remote</div>
+        <ul class="exp-bullets">
+          <li>Leading full stack development of AI-powered SaaS products for US clients using React, Next.js, and Python/FastAPI.</li>
+          <li>Building LLM-driven features including RAG document Q&amp;A, chat interfaces, and intelligent automation with OpenAI and LangChain.</li>
+          <li>Architecting vector search pipelines with Pinecone and designing RESTful APIs for data integration.</li>
+        </ul>
+      </div>
+
+      <div class="exp-entry no-break">
+        <div class="exp-header">
+          <span class="exp-title">Full Stack Developer</span>
+          <span class="exp-date">January 2022 – March 2025</span>
+        </div>
+        <div class="exp-company">TechnoYuga — Philippines</div>
+        <ul class="exp-bullets">
+          <li>Designed and shipped full stack web applications for enterprise clients across e-commerce, logistics, and analytics domains.</li>
+          <li>Built React SPAs, Node.js/Express APIs, and PostgreSQL data layers; integrated AI features including semantic search and content generation.</li>
+          <li>Delivered AI-powered product recommendation engine that increased average order value by 22% for a major e-commerce client.</li>
+        </ul>
+      </div>
+
+      <div class="exp-entry no-break">
+        <div class="exp-header">
+          <span class="exp-title">Junior Web Developer</span>
+          <span class="exp-date">June 2019 – December 2021</span>
+        </div>
+        <div class="exp-company">Flatworld Solutions — Philippines</div>
+        <ul class="exp-bullets">
+          <li>Developed and maintained web applications using React, Node.js, and MySQL; built REST APIs and implemented OAuth authentication flows.</li>
+          <li>Contributed to CI/CD pipelines and began integrating ML models into web products, including a text classification service and recommendation engine.</li>
+          <li>Collaborated with cross-functional teams to deliver responsive, accessible frontends meeting WCAG 2.1 AA standards.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ── Projects ─────────────────────────────────────────────────────── -->
+    <section class="section">
+      <div class="section-heading">Key Projects</div>
+
+      <div class="project-entry no-break">
+        <div class="project-header">
+          <span class="project-name">AI Document Assistant</span>
+          <span class="project-stack">Next.js · OpenAI · LangChain · Pinecone</span>
+        </div>
+        <p class="project-desc">Full stack RAG application for document Q&amp;A. Users upload PDFs; the system chunks, embeds, and stores in Pinecone for sub-second semantic retrieval. Chat interface built with Next.js and streamed OpenAI responses.</p>
+      </div>
+
+      <div class="project-entry no-break">
+        <div class="project-header">
+          <span class="project-name">Full Stack E-Commerce Platform</span>
+          <span class="project-stack">React · Node.js · PostgreSQL · Stripe</span>
+        </div>
+        <p class="project-desc">End-to-end e-commerce platform with React storefront, Express API, PostgreSQL, and Stripe payments. AI-powered recommendation engine using collaborative filtering boosted average order value by 22%.</p>
+      </div>
+
+      <div class="project-entry no-break">
+        <div class="project-header">
+          <span class="project-name">AI Code Review Bot</span>
+          <span class="project-stack">TypeScript · GPT-4 · FastAPI · GitHub API</span>
+        </div>
+        <p class="project-desc">GitHub PR integration that uses GPT-4 to analyze diffs and post structured feedback on security, performance, and best practices. Reduced average review turnaround by 60% in team pilot.</p>
+      </div>
+
+      <div class="project-entry no-break">
+        <div class="project-header">
+          <span class="project-name">AI Content Generation Platform</span>
+          <span class="project-stack">Next.js · OpenAI · Supabase · Tailwind CSS</span>
+        </div>
+        <p class="project-desc">SaaS platform generating SEO-optimized blog posts, product descriptions, and social copy. Supabase backend for auth and content history. 500+ active users with subscription billing via Stripe.</p>
+      </div>
+
+      <div class="project-entry no-break">
+        <div class="project-header">
+          <span class="project-name">Real-Time Chat with AI Copilot</span>
+          <span class="project-stack">React · Socket.io · Node.js · MongoDB</span>
+        </div>
+        <p class="project-desc">Full stack chat app with real-time messaging via Socket.io and persistent history in MongoDB. Embedded AI copilot answers questions, summarizes threads, and drafts replies on demand using OpenAI function calling.</p>
+      </div>
+    </section>
+
+    <!-- ── Skills ───────────────────────────────────────────────────────── -->
+    <section class="section no-break">
+      <div class="section-heading">Technical Skills</div>
+      <table class="skills-table">
+        <tbody>
+          <tr>
+            <td>Frontend</td>
+            <td>React, Next.js, TypeScript, Tailwind CSS, HTML5, CSS3, Redux, Vite, D3.js</td>
+          </tr>
+          <tr>
+            <td>Backend</td>
+            <td>Node.js, Express, Python, FastAPI, Django, REST APIs, GraphQL, WebSockets</td>
+          </tr>
+          <tr>
+            <td>AI &amp; LLM</td>
+            <td>OpenAI API, LangChain, LlamaIndex, RAG Pipelines, Prompt Engineering, Embeddings, Function Calling</td>
+          </tr>
+          <tr>
+            <td>Databases</td>
+            <td>PostgreSQL, MongoDB, Redis, Pinecone, Supabase, Prisma, MySQL</td>
+          </tr>
+          <tr>
+            <td>Machine Learning</td>
+            <td>PyTorch, Hugging Face, Scikit-learn, Fine-tuning, Vector Search, NLP, spaCy</td>
+          </tr>
+          <tr>
+            <td>DevOps</td>
+            <td>Docker, GitHub Actions, AWS, Vercel, Nginx, Linux, CI/CD</td>
+          </tr>
+          <tr>
+            <td>Tools</td>
+            <td>Git, Postman, Figma, Jest, Vitest, Playwright, VS Code</td>
+          </tr>
+          <tr>
+            <td>Architecture</td>
+            <td>Microservices, Event-Driven, API Design, Auth &amp; OAuth, Caching, Message Queues</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ── Achievements ──────────────────────────────────────────────────── -->
+    <section class="section no-break">
+      <div class="section-heading">Key Achievements</div>
+      <div class="achievements-grid">
+        <div class="achievement-item">
+          <span class="achievement-metric">−60%</span>
+          <span class="achievement-label">Code review turnaround with AI PR bot</span>
+        </div>
+        <div class="achievement-item">
+          <span class="achievement-metric">500+</span>
+          <span class="achievement-label">Active users on AI content SaaS</span>
+        </div>
+        <div class="achievement-item">
+          <span class="achievement-metric">+22%</span>
+          <span class="achievement-label">Order value via AI recommendations</span>
+        </div>
+        <div class="achievement-item">
+          <span class="achievement-metric">20+</span>
+          <span class="achievement-label">Full stack &amp; AI projects shipped</span>
+        </div>
+        <div class="achievement-item">
+          <span class="achievement-metric">&lt;1s</span>
+          <span class="achievement-label">RAG retrieval across 10k+ pages</span>
+        </div>
+        <div class="achievement-item">
+          <span class="achievement-metric">6+</span>
+          <span class="achievement-label">Years building web &amp; AI products</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Certifications ────────────────────────────────────────────────── -->
+    <section class="section no-break">
+      <div class="section-heading">Certifications</div>
+      <div class="cert-cols">
+        <div class="cert-item">AWS Certified Developer – Associate</div>
+        <div class="cert-item">Meta Front-End Developer Professional Certificate</div>
+        <div class="cert-item">DeepLearning.AI — LangChain for LLM Application Development</div>
+        <div class="cert-item">Google Professional Cloud Developer</div>
+        <div class="cert-item">OpenAI API Developer Certification</div>
+      </div>
+    </section>
+
+    <!-- ── Education ─────────────────────────────────────────────────────── -->
+    <section class="section no-break">
+      <div class="section-heading">Education</div>
+      <div class="edu-entry">
+        <div>
+          <div class="edu-degree">Bachelor of Science in Computer Science</div>
+          <div class="edu-school">University of the Philippines Diliman</div>
+        </div>
+        <div class="edu-year">Graduated 2017</div>
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>

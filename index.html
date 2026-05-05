@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aldrey Dela Pena Canlas | Full Stack Developer &amp; AI Integration</title>
+
+  <!-- Open Graph meta tags -->
+  <meta property="og:title" content="Aldrey Dela Pena Canlas | Full Stack Developer &amp; AI Integration" />
+  <meta property="og:description" content="Full Stack Developer with 6+ years building web applications and integrating AI/LLM capabilities. Specializing in React, Node.js, Python, and AI-powered product features." />
+  <meta property="og:type" content="website" />
+
+  <!-- Google Fonts: Inter for clean professional look -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Skip to main content (keyboard accessibility) -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- Navigation -->
+  <header>
+    <nav id="navbar" aria-label="Main navigation">
+      <div class="nav-logo">
+        <a href="#hero" aria-label="Aldrey Dela Pena Canlas — Home">
+          <span class="nav-logo-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg>
+          </span>
+          <span class="nav-logo-text">Aldrey<span class="nav-logo-accent"> Canlas</span></span>
+        </a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <!-- Hero Section -->
+    <section id="hero" aria-labelledby="hero-heading">
+      <!-- Decorative medical cross pulse lines -->
+      <div class="hero-pulse-ring hero-pulse-ring--1" aria-hidden="true"></div>
+      <div class="hero-pulse-ring hero-pulse-ring--2" aria-hidden="true"></div>
+      <div class="hero-pulse-ring hero-pulse-ring--3" aria-hidden="true"></div>
+
+      <!-- ECG background tracks — driven by canvas for true continuous drawing -->
+      <div class="hero-ecg-bg" aria-hidden="true">
+        <canvas class="ecg-track" id="ecg-track-top"></canvas>
+        <canvas class="ecg-track" id="ecg-track-mid"></canvas>
+        <canvas class="ecg-track" id="ecg-track-bot"></canvas>
+      </div>
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="hero-badge-dot" aria-hidden="true"></span>
+          Full Stack Developer &amp; AI Integration
+        </div>
+        <h1 id="hero-heading">Aldrey Dela Pena Canlas</h1>
+        <h2><span class="hero-title-gradient">Full Stack Developer &amp; AI Integration</span></h2>
+        <p class="hero-tagline">Building modern web applications and embedding AI capabilities — from LLM-powered features and intelligent APIs to scalable full stack systems.</p>
+        <div class="hero-stats" aria-label="Key metrics">
+          <div class="hero-stat">
+            <span class="hero-stat-value">6+</span>
+            <span class="hero-stat-label">Years Experience</span>
+          </div>
+          <div class="hero-stat-divider" aria-hidden="true"></div>
+          <div class="hero-stat">
+            <span class="hero-stat-value">20+</span>
+            <span class="hero-stat-label">Projects Shipped</span>
+          </div>
+          <div class="hero-stat-divider" aria-hidden="true"></div>
+          <div class="hero-stat">
+            <span class="hero-stat-value">AI-First</span>
+            <span class="hero-stat-label">Product Mindset</span>
+          </div>
+        </div>
+        <div class="hero-cta">
+          <button class="btn btn-primary" data-target="projects">View My Work</button>
+          <button class="btn btn-secondary" data-target="contact">Contact Me</button>
+          <a
+            href="resume.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-ghost"
+            aria-label="View resume in browser"
+          >
+            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            View Resume
+          </a>
+        </div>
+        <!-- ECG / heartbeat line decoration -->
+        <div class="hero-ecg" aria-hidden="true">
+          <svg viewBox="0 0 600 60" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polyline class="ecg-line" points="0,30 60,30 80,30 90,10 100,50 110,5 120,55 130,30 150,30 210,30 230,30 240,10 250,50 260,5 270,55 280,30 300,30 360,30 380,30 390,10 400,50 410,5 420,55 430,30 450,30 600,30"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" aria-labelledby="about-heading">
+      <div class="container">
+        <h2 class="section-title" id="about-heading">About</h2>
+        <div class="about-grid">
+          <div class="about-summary" data-reveal="left">
+            <p>I am a Full Stack Developer with 6 years of experience building web applications and integrating AI capabilities into products. I work across the entire stack — from designing React frontends and REST/GraphQL APIs to deploying Python backends and wiring in LLM-powered features using OpenAI, LangChain, and vector databases.</p>
+            <p>I specialize in bridging the gap between traditional web engineering and modern AI integration: building chat interfaces, RAG pipelines, AI-assisted workflows, and intelligent automation that ship as real products — not just prototypes.</p>
+          </div>
+          <div class="about-details" data-reveal="right">
+            <ul class="details-list">
+              <li><strong>Email:</strong> <a href="mailto:aldrey.bim@gmail.com">aldrey.bim@gmail.com</a></li>
+              <li><strong>Phone:</strong> <a href="tel:+639750280986">+63 9750280986</a></li>
+              <li><strong>Location:</strong> Mexico, Pampanga, Philippines</li>
+            </ul>
+            <div class="education">
+              <h3>Education</h3>
+              <p>Bachelor of Science in Computer Science<br />
+              University of the Philippines Diliman<br />
+              Graduated 2017</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" aria-labelledby="skills-heading">
+      <div class="container">
+        <h2 class="section-title" id="skills-heading">Skills</h2>
+        <div class="skills-grid">
+
+          <article class="skill-category" data-reveal="up" data-reveal-delay="0">
+            <h3>Frontend</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">React</span>
+              <span class="skill-tag">Next.js</span>
+              <span class="skill-tag">TypeScript</span>
+              <span class="skill-tag">Tailwind CSS</span>
+              <span class="skill-tag">HTML5</span>
+              <span class="skill-tag">CSS3</span>
+              <span class="skill-tag">Redux</span>
+              <span class="skill-tag">Vite</span>
+            </div>
+          </article>
+
+          <article class="skill-category" data-reveal="up" data-reveal-delay="80">
+            <h3>Backend</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">Node.js</span>
+              <span class="skill-tag">Express</span>
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">FastAPI</span>
+              <span class="skill-tag">Django</span>
+              <span class="skill-tag">REST APIs</span>
+              <span class="skill-tag">GraphQL</span>
+              <span class="skill-tag">WebSockets</span>
+            </div>
+          </article>
+
+          <article class="skill-category" data-reveal="up" data-reveal-delay="160">
+            <h3>AI &amp; LLM Integration</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">OpenAI API</span>
+              <span class="skill-tag">LangChain</span>
+              <span class="skill-tag">LlamaIndex</span>
+              <span class="skill-tag">RAG Pipelines</span>
+              <span class="skill-tag">Prompt Engineering</span>
+              <span class="skill-tag">Function Calling</span>
+              <span class="skill-tag">Embeddings</span>
+            </div>
+          </article>
+
+          <article class="skill-category" data-reveal="up" data-reveal-delay="0">
+            <h3>Databases &amp; Storage</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">PostgreSQL</span>
+              <span class="skill-tag">MongoDB</span>
+              <span class="skill-tag">Redis</span>
+              <span class="skill-tag">Pinecone</span>
+              <span class="skill-tag">Supabase</span>
+              <span class="skill-tag">Prisma</span>
+              <span class="skill-tag">SQL</span>
+            </div>
+          </article>
+
+          <article class="skill-category" data-reveal="up" data-reveal-delay="80">
+            <h3>Machine Learning</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">PyTorch</span>
+              <span class="skill-tag">Hugging Face</span>
+              <span class="skill-tag">Scikit-learn</span>
+              <span class="skill-tag">Fine-tuning</span>
+              <span class="skill-tag">Vector Search</span>
+              <span class="skill-tag">NLP</span>
+              <span class="skill-tag">spaCy</span>
+            </div>
+          </article>
+
+          <article class="skill-category" data-reveal="up" data-reveal-delay="160">
+            <h3>DevOps &amp; Infrastructure</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">Docker</span>
+              <span class="skill-tag">GitHub Actions</span>
+              <span class="skill-tag">AWS</span>
+              <span class="skill-tag">Vercel</span>
+              <span class="skill-tag">Nginx</span>
+              <span class="skill-tag">Linux</span>
+              <span class="skill-tag">CI/CD</span>
+            </div>
+          </article>
+
+          <article class="skill-category" data-reveal="up" data-reveal-delay="0">
+            <h3>Tools &amp; Workflow</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">Git</span>
+              <span class="skill-tag">VS Code</span>
+              <span class="skill-tag">Postman</span>
+              <span class="skill-tag">Figma</span>
+              <span class="skill-tag">Jest</span>
+              <span class="skill-tag">Vitest</span>
+              <span class="skill-tag">Playwright</span>
+            </div>
+          </article>
+
+          <article class="skill-category" data-reveal="up" data-reveal-delay="80">
+            <h3>Architecture &amp; Patterns</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">Microservices</span>
+              <span class="skill-tag">Event-Driven</span>
+              <span class="skill-tag">API Design</span>
+              <span class="skill-tag">Auth &amp; OAuth</span>
+              <span class="skill-tag">Caching</span>
+              <span class="skill-tag">Message Queues</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" aria-labelledby="experience-heading">
+      <div class="container">
+        <h2 class="section-title" id="experience-heading">Experience</h2>
+        <div class="timeline">
+
+          <article class="timeline-entry" data-reveal="left">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <h3>Full Stack Developer &amp; AI Integration Lead</h3>
+              <p class="company">Boulder Labs &mdash; US Remote</p>
+              <span class="date-range">March 2025 – Present</span>
+              <p>Leading full stack development of AI-powered SaaS products for US clients. Building React/Next.js frontends with LLM-driven features including chat interfaces, document Q&amp;A, and intelligent automation. Architecting Python/FastAPI backends with RAG pipelines, OpenAI function calling, and vector search using Pinecone.</p>
+            </div>
+          </article>
+
+          <article class="timeline-entry" data-reveal="left" data-reveal-delay="100">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <h3>Full Stack Developer</h3>
+              <p class="company">TechnoYuga &mdash; Philippines</p>
+              <span class="date-range">January 2022 – March 2025</span>
+              <p>Designed and shipped full stack web applications for enterprise clients across e-commerce, logistics, and analytics domains. Built React SPAs, Node.js/Express APIs, and PostgreSQL data layers. Integrated AI features including semantic search, content generation, and automated data extraction using OpenAI and Hugging Face models.</p>
+            </div>
+          </article>
+
+          <article class="timeline-entry" data-reveal="left" data-reveal-delay="200">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <h3>Junior Web Developer</h3>
+              <p class="company">Flatworld Solutions &mdash; Philippines</p>
+              <span class="date-range">June 2019 – December 2021</span>
+              <p>Developed and maintained web applications using React, Node.js, and MySQL. Built REST APIs, implemented authentication flows, and contributed to CI/CD pipelines. Began integrating ML models into web products, including a recommendation engine and a text classification service.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" aria-labelledby="projects-heading">
+      <canvas id="projects-canvas" aria-hidden="true"></canvas>
+      <div class="container">
+        <h2 class="section-title" id="projects-heading">Projects</h2>
+        <div class="projects-grid">
+
+          <article class="project-card" data-project="aiassistant" data-reveal="up" data-reveal-delay="0">
+            <div class="project-card-body">
+              <div class="project-tags">
+                <span class="project-tag">Next.js</span>
+                <span class="project-tag">OpenAI</span>
+                <span class="project-tag">LangChain</span>
+                <span class="project-tag">Pinecone</span>
+              </div>
+              <h3>AI Document Assistant</h3>
+              <p>Full stack RAG application letting users upload documents and chat with their content. Built with Next.js, OpenAI embeddings, and Pinecone vector search — sub-second retrieval across 10k+ page corpora.</p>
+            </div>
+            <div class="project-card-footer">
+              <button class="btn-project-detail" aria-label="View details for AI Document Assistant">Details</button>
+              <div class="project-links"></div>
+            </div>
+          </article>
+
+          <article class="project-card" data-project="ecommerce" data-reveal="up" data-reveal-delay="100">
+            <div class="project-card-body">
+              <div class="project-tags">
+                <span class="project-tag">React</span>
+                <span class="project-tag">Node.js</span>
+                <span class="project-tag">PostgreSQL</span>
+                <span class="project-tag">Stripe</span>
+              </div>
+              <h3>Full Stack E-Commerce Platform</h3>
+              <p>End-to-end e-commerce platform with React storefront, Node.js/Express API, PostgreSQL database, and Stripe payments. Includes an AI-powered product recommendation engine boosting average order value by 22%.</p>
+            </div>
+            <div class="project-card-footer">
+              <button class="btn-project-detail" aria-label="View details for Full Stack E-Commerce Platform">Details</button>
+              <div class="project-links"></div>
+            </div>
+          </article>
+
+          <article class="project-card" data-project="codereviewer" data-reveal="up" data-reveal-delay="200">
+            <div class="project-card-body">
+              <div class="project-tags">
+                <span class="project-tag">TypeScript</span>
+                <span class="project-tag">GPT-4</span>
+                <span class="project-tag">FastAPI</span>
+                <span class="project-tag">GitHub API</span>
+              </div>
+              <h3>AI Code Review Bot</h3>
+              <p>Automated code review tool that integrates with GitHub PRs, uses GPT-4 to analyze diffs, and posts structured feedback on security issues, performance, and best practices. Reduced review turnaround by 60%.</p>
+            </div>
+            <div class="project-card-footer">
+              <button class="btn-project-detail" aria-label="View details for AI Code Review Bot">Details</button>
+              <div class="project-links"></div>
+            </div>
+          </article>
+
+          <article class="project-card" data-project="dashboard" data-reveal="up" data-reveal-delay="0">
+            <div class="project-card-body">
+              <div class="project-tags">
+                <span class="project-tag">React</span>
+                <span class="project-tag">D3.js</span>
+                <span class="project-tag">Python</span>
+                <span class="project-tag">WebSockets</span>
+              </div>
+              <h3>Real-Time Analytics Dashboard</h3>
+              <p>Interactive analytics dashboard with live data streaming via WebSockets, D3.js visualizations, and a Python backend. Includes an AI-generated natural language summary of key trends updated every 5 minutes.</p>
+            </div>
+            <div class="project-card-footer">
+              <button class="btn-project-detail" aria-label="View details for Real-Time Analytics Dashboard">Details</button>
+              <div class="project-links"></div>
+            </div>
+          </article>
+
+          <article class="project-card" data-project="contentgen" data-reveal="up" data-reveal-delay="100">
+            <div class="project-card-body">
+              <div class="project-tags">
+                <span class="project-tag">Next.js</span>
+                <span class="project-tag">OpenAI</span>
+                <span class="project-tag">Supabase</span>
+                <span class="project-tag">Tailwind CSS</span>
+              </div>
+              <h3>AI Content Generation Platform</h3>
+              <p>SaaS platform for generating SEO-optimized blog posts, product descriptions, and social copy. Built with Next.js and OpenAI, with a Supabase backend for user management and content history. 500+ active users.</p>
+            </div>
+            <div class="project-card-footer">
+              <button class="btn-project-detail" aria-label="View details for AI Content Generation Platform">Details</button>
+              <div class="project-links"></div>
+            </div>
+          </article>
+
+          <article class="project-card" data-project="apigw" data-reveal="up" data-reveal-delay="200">
+            <div class="project-card-body">
+              <div class="project-tags">
+                <span class="project-tag">FastAPI</span>
+                <span class="project-tag">Redis</span>
+                <span class="project-tag">Docker</span>
+                <span class="project-tag">JWT</span>
+              </div>
+              <h3>AI API Gateway &amp; Rate Limiter</h3>
+              <p>Production-grade API gateway for proxying LLM requests with per-user rate limiting, cost tracking, caching of repeated queries in Redis, and a React admin dashboard for usage analytics.</p>
+            </div>
+            <div class="project-card-footer">
+              <button class="btn-project-detail" aria-label="View details for AI API Gateway">Details</button>
+              <div class="project-links"></div>
+            </div>
+          </article>
+
+          <article class="project-card" data-project="chatapp" data-reveal="up" data-reveal-delay="0">
+            <div class="project-card-body">
+              <div class="project-tags">
+                <span class="project-tag">React</span>
+                <span class="project-tag">Socket.io</span>
+                <span class="project-tag">Node.js</span>
+                <span class="project-tag">MongoDB</span>
+              </div>
+              <h3>Real-Time Chat with AI Copilot</h3>
+              <p>Full stack chat application with real-time messaging via Socket.io, persistent history in MongoDB, and an embedded AI copilot that can answer questions, summarize threads, and draft replies on demand.</p>
+            </div>
+            <div class="project-card-footer">
+              <button class="btn-project-detail" aria-label="View details for Real-Time Chat with AI Copilot">Details</button>
+              <div class="project-links"></div>
+            </div>
+          </article>
+
+          <article class="project-card" data-project="resumeparser" data-reveal="up" data-reveal-delay="100">
+            <div class="project-card-body">
+              <div class="project-tags">
+                <span class="project-tag">Python</span>
+                <span class="project-tag">LlamaIndex</span>
+                <span class="project-tag">React</span>
+                <span class="project-tag">PostgreSQL</span>
+              </div>
+              <h3>AI Resume Parser &amp; Job Matcher</h3>
+              <p>Automated resume parsing and job-matching tool using LlamaIndex for structured extraction and semantic similarity scoring. Processes PDFs, extracts skills and experience, and ranks candidates against job descriptions.</p>
+            </div>
+            <div class="project-card-footer">
+              <button class="btn-project-detail" aria-label="View details for AI Resume Parser">Details</button>
+              <div class="project-links"></div>
+            </div>
+          </article>
+
+          <article class="project-card" data-project="devtools" data-reveal="up" data-reveal-delay="200">
+            <div class="project-card-body">
+              <div class="project-tags">
+                <span class="project-tag">TypeScript</span>
+                <span class="project-tag">Vite</span>
+                <span class="project-tag">OpenAI</span>
+                <span class="project-tag">Chrome Extension</span>
+              </div>
+              <h3>AI Developer Toolkit Extension</h3>
+              <p>Chrome extension for developers that provides AI-powered code explanation, regex generation, JSON formatting, and API response inspection — all accessible from the browser DevTools panel.</p>
+            </div>
+            <div class="project-card-footer">
+              <button class="btn-project-detail" aria-label="View details for AI Developer Toolkit Extension">Details</button>
+              <div class="project-links"></div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Detail Modal -->
+    <div id="project-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+      <div class="modal-container">
+        <button class="modal-close" id="modal-close" aria-label="Close project details">&times;</button>
+        <div class="modal-content" id="modal-content">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Certifications Section -->
+    <section id="certifications" aria-labelledby="certifications-heading">
+      <div class="container">
+        <h2 class="section-title" id="certifications-heading">Certifications &amp; Achievements</h2>
+        <div class="cert-grid">
+
+          <div class="cert-subsection" data-reveal="left">
+            <h3>Certifications</h3>
+            <ul class="cert-list">
+              <li>
+                <span class="cert-icon" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+                </span>
+                AWS Certified Developer – Associate
+              </li>
+              <li>
+                <span class="cert-icon" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+                </span>
+                Meta Front-End Developer Professional Certificate
+              </li>
+              <li>
+                <span class="cert-icon" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+                </span>
+                DeepLearning.AI — LangChain for LLM Application Development
+              </li>
+              <li>
+                <span class="cert-icon" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+                </span>
+                Google Professional Cloud Developer
+              </li>
+              <li>
+                <span class="cert-icon" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+                </span>
+                OpenAI API Developer Certification
+              </li>
+            </ul>
+          </div>
+
+          <div class="cert-subsection achievements" data-reveal="right">
+            <h3>Key Achievements</h3>
+            <ul class="achievement-list">
+              <li>
+                <span class="achievement-metric">−60%</span>
+                <span>Code review turnaround with AI-powered PR analysis bot</span>
+              </li>
+              <li>
+                <span class="achievement-metric">500+</span>
+                <span>Active users on AI content generation SaaS platform</span>
+              </li>
+              <li>
+                <span class="achievement-metric">+22%</span>
+                <span>Average order value via AI recommendation engine</span>
+              </li>
+              <li>
+                <span class="achievement-metric">20+</span>
+                <span>Full stack and AI-integrated projects shipped to production</span>
+              </li>
+              <li>
+                <span class="achievement-metric">&lt;1s</span>
+                <span>RAG retrieval latency across 10k+ page document corpora</span>
+              </li>
+              <li>
+                <span class="achievement-metric">6+</span>
+                <span>Years building web apps and AI-powered products</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" aria-labelledby="contact-heading">
+      <div class="container">
+        <h2 class="section-title" id="contact-heading">Contact</h2>
+        <div class="contact-grid">
+
+          <div class="contact-info">
+            <h3>Get In Touch</h3>
+            <ul class="contact-details">
+              <li><strong>Email:</strong> <a href="mailto:aldrey.bim@gmail.com">aldrey.bim@gmail.com</a></li>
+              <li><strong>Phone:</strong> <a href="tel:+639750280986">+63 9750280986</a></li>
+              <li><strong>Address:</strong> Mexico, Pampanga, Philippines</li>
+            </ul>
+          </div>
+
+          <div class="contact-form-wrapper">
+            <form id="contact-form" novalidate>
+              <div class="form-group">
+                <label for="name">Name <span aria-hidden="true">*</span></label>
+                <input type="text" id="name" name="name" required autocomplete="name" />
+                <span class="error-msg" id="name-error" role="alert"></span>
+              </div>
+              <div class="form-group">
+                <label for="email">Email <span aria-hidden="true">*</span></label>
+                <input type="email" id="email" name="email" required autocomplete="email" />
+                <span class="error-msg" id="email-error" role="alert"></span>
+              </div>
+              <div class="form-group">
+                <label for="subject">Subject <span aria-hidden="true">*</span></label>
+                <input type="text" id="subject" name="subject" required />
+                <span class="error-msg" id="subject-error" role="alert"></span>
+              </div>
+              <div class="form-group">
+                <label for="message">Message <span aria-hidden="true">*</span></label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                <span class="error-msg" id="message-error" role="alert"></span>
+              </div>
+              <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+            <div class="success-message" id="success-message" hidden>
+              <p>Thank you! Your message has been sent successfully. I'll get back to you soon.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="footer-logo-icon" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg>
+        </span>
+        <span>Aldrey Dela Pena Canlas</span>
+      </div>
+      <p class="footer-tagline">Full Stack Developer &amp; AI Integration · React · Node.js · Python · LLMs</p>
+      <p class="footer-copy">&copy; <span id="year"></span> Aldrey Dela Pena Canlas. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
